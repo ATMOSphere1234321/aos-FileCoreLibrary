@@ -96,7 +96,7 @@ public class SftpFileEditor  extends FileEditor{
 
             @Override
             public long skip(long n) throws IOException {
-                return is.skip(n);
+                return is.skip(n);  // SKIP-OK: #legacy-untriaged
             }
 
             @Override

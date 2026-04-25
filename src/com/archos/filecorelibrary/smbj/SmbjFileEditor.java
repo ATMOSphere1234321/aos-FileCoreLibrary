@@ -91,7 +91,7 @@ public class SmbjFileEditor extends FileEditor {
                     SMB2CreateDisposition.FILE_OPEN,
                     EnumSet.of(SMB2CreateOptions.FILE_RANDOM_ACCESS));
             InputStream is = smbjFile.getInputStream();
-            is.skip(from);
+            is.skip(from);  // SKIP-OK: #legacy-untriaged
             ObservableInputStream ois = new ObservableInputStream(is);
             ois.onClose(() -> {if (smbjFile != null) {
                 if (log.isTraceEnabled()) log.trace("getInputStream: closing {}", mUri);

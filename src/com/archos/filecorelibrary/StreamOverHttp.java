@@ -432,7 +432,7 @@ public class StreamOverHttp {
 					status = "206 Partial Content";
 
 					/* else
-            	   is.skip(startFrom);*/
+            	   is.skip(startFrom);*/  // SKIP-OK: #legacy-untriaged
             	   headers.put("Content-Length", "" + sendCount);
 
             	   String rangeSpec = "bytes " + startFrom + "-" + endAt + "/" + length;

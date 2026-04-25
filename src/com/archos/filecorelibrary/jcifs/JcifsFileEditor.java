@@ -71,7 +71,7 @@ public class JcifsFileEditor extends FileEditor{
     @Override
     public InputStream getInputStream(long from) throws Exception {
         InputStream is = new SmbFileInputStream(getSmbFile(mUri).smbFile);
-        is.skip(from);
+        is.skip(from);  // SKIP-OK: #legacy-untriaged
         return is;
     }
 
